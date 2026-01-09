@@ -1,178 +1,835 @@
-<!DOCTYPE html>
-<html lang="en">
+*,
+*::before,
+*::after {
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quests</title>
-    <link rel="stylesheet" href="styles/zinCoinStyle.css">
-    <link rel="icon" href="images/favicon.png" type="image/png">
-</head>
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
 
-<body>
-    <div class="container">
-        <div class="head-block">
-            <div class="profile">
-                <img src="images/ZIN.png" alt="ZINoin profile picture">
-                <p id="username">$ONE</p>
-            </div>
-            <div class="account-balance">
-                <p id="balance">0.000</p>
-                <div class="control-box">
-                    <a href="Utility.html" style="color: #000;">
-                        <div class="controls" id="utility">
-                            <span>utility</span>
-                            <img src="images/balance.png" alt="Utility" title="utility">
-                        </div>
-                    </a>
-                    <div class="controls" id="settings">
-                        <span>settings</span>
-                        <img src="images/settings.png" alt="settings" title="settings">
-                    </div>
-                    <div class="controls" id="wallet">
-                        <span>wallet</span>
-                        <img src="images/wallet.png" alt="wallet" title="wallet">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quests-area">
-            <div class="quest-container">
-                <h3>Quests Area</h3>
-                <!-- Airdrop Code Starts Here:👇 -->
-                <div class="airdrop-area">
-                    <div class="cntd-pannel" id="cntd-pnl">
-                        <div class="head-content">
-                            <!-- <p>ONET:<span><i>By ZillionFundz($ZIN).</i></span></p> -->
-                            <h2>Quests for more points</h2>
-                        </div>
-                        <div id="unit-task" class="perform-task">
-                            <div class="highlight-box" id="twitter">
-                                <img src="images/x.png" alt="twitter">
-                                <P id="x-task">Follow Account on X</P>
-                                <a href="https://x.com/onet_chain" target="_blank">
-                                    <div class="zin-task">
-                                        <button id="twitter-button" onclick="fetchTask()"><img src="images/ZIN.png"
-                                                alt="ONET">20
-                                            $ONE</button>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="perform-task-minibox">
-                                <img id="big-coin" src="images/ZIN.png" alt="ZINCoin">
-                                <p>Make sure you complete the task above.</p>
-                                <button onclick="performtask()">View Task</button>
-                            </div>
-                        </div>
-                        <div class="quests-group"> <!--The pannel holding quest boxes-->
-                            <div class="quests-box" id="twitter">
-                                <img src="images/x.png" alt="twitter">
-                                <P id="x-task">Follow Account on X</P>
-                                <a href="https://x.com/onet_blockchain" target="_blank">
-                                    <div class="zin-task">
-                                        <button id="twitter-button" onclick="fetchTask()"><img src="images/ZIN.png"
-                                                alt="ZINoin">20
-                                            $ONE</button>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="quests-box" id="instagram">
-                                <img src="images/ig.png" alt="instagram">
-                                <P id="instagram-task">Follow on Instagram</P>
-                                <a href="https://www.instagram.com/zillionfundzfx/" target="_blank">
-                                    <div id="instagram-button" class="zin-task">
-                                        <button onclick="fetchTask()"><img src="images/ZIN.png" alt="ZINoin">20
-                                            $ONE</button>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="quests-box" id="youtube">
-                                <img src="images/ytb.png" alt="youtube">
-                                <P id="youtube-task">Subscribe to YouTube</P>
-                                <a href="https://www.youtube.com/@ZillionFundz" target="_blank">
-                                    <div id="youtube-button" class="zin-task">
-                                        <button onclick="fetchTask()"><img src="images/ZIN.png" alt="ZINoin">20
-                                            $ONE</button>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="quests-box" id="facebook">
-                                <img src="images/fb.png" alt="faceboox">
-                                <P id="facebook-task">Follow on Facebook</P>
-                                <a href="https://www.facebook.com/profile.php?id=100095346411391&mibextid=ZbWKwL"
-                                    target="_blank">
-                                    <div id="facebook-button" class="zin-task">
-                                        <button onclick="fetchTask()"><img src="images/ZIN.png" alt="ZINoin">20
-                                            $ONE</button>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="quests-box" id="tiktok">
-                                <img src="images/tkt.png" alt="tiktok">
-                                <P id="tiktok-task">Follow on TikTok</P>
-                                <a href="https://www.tiktok.com/@zillionfundz001?_t=8p2ET6oUhi1&_r=1" target="_blank">
-                                    <div id="tiktok-button" class="zin-task">
-                                        <button onclick="fetchTask()"><img src="images/ZIN.png" alt="ZINoin">20
-                                            $ONE</button>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="quests-box" id="telegram">
-                                <img src="images/tlg.png" alt="telegram">
-                                <P id="telegram-task">Subscribe to Telegram</P>
-                                <a href="https://t.me/+XWsJdtA5b3MyMzU0" target="_blank">
-                                    <div id="telegram-button" class="zin-task">
-                                        <button onclick="fetchTask()"><img src="images/ZIN.png" alt="ZINoin">20
-                                            $ONE</button>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="quests-box" id="friends">
-                                <img src="images/Quests-friends.png" alt="telegram" style="border-radius: 7px;">
-                                <P id="tiktok-task">Invite 5 friends</P>
-                                <a href="https://shorturl.at/b3f8K" target="_blank">
-                                    <div id="friends-button" class="zin-task">
-                                        <button onclick="fetchTask()"><img src="images/ONET.png" alt="ONET">50
-                                            $ONE</button>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-block">
-            <div class="control-box">
-                <div class="panel-box" id="farm">
-                    <a href="index.html">
-                        <img src="images/mining.png" alt="settings">
-                        <span>Farm</span>
-                    </a>
-                </div>
-                <div class="panel-box" id="quests">
-                    <a href="#">
-                        <img src="images/task.png" alt="quest">
-                        <span>Quests</span>
-                    </a>
-                </div>
-                <div class="panel-box" id="friends">
-                    <a href="friends.html">
-                        <img src="images/friends.png" alt="friends">
-                        <span>Friends</span>
-                    </a>
-                </div>
+body {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 100vh; */
+    margin: 0px;
+    /* padding: 2px; */
+    background: hsl(296, 41%, 8%);
+}
 
-                <div class="panel-box" id="friends">
-                    <a href="Games.html">
-                        <img src="images/games.png" alt="game">
-                        <span>Games</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="scripts/zinCoinScript.js"></script>
-</body>
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 380px;
+    height: 100vh;
+    border-radius: 15px;
+    background: radial-gradient(#1c0c1d, #663267, #1c0c1d);
+    overflow: hidden;
+    border: 1px solid hsl(250, 50%, 60%);
+    margin: 5px auto 5px;
+}
 
-</html>
+.head-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 10px 10px 0px 0px;
+    padding: 5px;
+    border-top: 5px solid #7766cc;
+    box-shadow: 0px -2px 10px 0.5px #edbe03;
+    background-color: hsl(299, 38%, 21%);
+    width: 100%;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(299, 35%, 30%);
+    border-radius: 5px;
+    padding: 12px 15px 12px;
+    width: 80px;
+    height: 100%;
+    /* gap: 5px; */
+    flex-direction: column;
+}
+
+.profile img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 4px solid #7766cc;
+    /* margin: 2px 2px 0px; */
+    /* padding: 2px; */
+}
+
+.profile p {
+    color: #edbe03;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-align: center;
+    /* margin: 2px 5px 2px; */
+    padding: 2px 5px 0px;
+}
+
+.function-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.timing-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin: 2px; */
+}
+
+#balance {
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 2px 5px;
+    padding: 2px;
+    /* background-color: aqua; */
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+#miningtime {
+    width: 100%;
+    background: radial-gradient(#1c0c1d, #59385c, #491349);
+    color: #7766cc;
+    margin: 10px;
+    padding: 2px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.control-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(299, 35%, 30%);
+    border-radius: 5px;
+    padding: 4px;
+    width: 100%;
+    gap: 2px;
+    /* margin: 5px; */
+}
+
+.control-box img {
+    width: 28px;
+    /* height: 30px; */
+    border-radius: 5px;
+    margin: 2px;
+    padding: 2px;
+}
+
+.control-box a {
+    /* width: 5%; */
+    margin: 0px;
+    padding: 4px;
+    color: #7766cc;
+    text-align: center;
+    text-decoration: none;
+}
+
+.control-box a:hover {
+    /* background: linear-gradient(360deg, #6856c2, #c3bd9f, #6856c2); */
+    box-shadow: 0px 0px 10px 0.1px #edbe03;
+    transition: 700ms;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    margin: 1px;
+    font-size: 10px;
+    background-color: hsl(250, 50%, 60%);
+    padding: 4px;
+    /* flex: 1; */
+}
+
+.controls a span {
+    color: #000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.7rem;
+    /* font-weight: bold; */
+    margin: 0px;
+    padding: 12px 5px 12px 5px;
+    border-radius: 5px;
+    /* background-color: aqua; */
+}
+
+.controls:hover {
+    background: linear-gradient(360deg, #6856c2, #c3bd9f, #6856c2);
+    box-shadow: 0px 0px 10px 0.1px #edbe03;
+    transition: 700ms;
+    cursor: pointer;
+}
+
+.controls span {
+    /* color: #fff; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.7rem;
+    /* font-weight: bold; */
+    margin: 0px;
+    padding: 12px 5px 12px 5px;
+    border-radius: 5px;
+    /* background-color: aqua; */
+}
+
+.controls span:hover {
+    font-size: 0.8rem;
+    transition: 500ms;
+}
+
+.body1-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    /* padding: 2%; */
+    min-width: 370px;
+    /* height: 290px; */
+    /* background: radial-gradient(#1c0c1d, #663267, #1c0c1d); */
+    /* border: 2px solid hsl(250, 50%, 60%); */
+    border-radius: 10px 10px 10px 10px;
+}
+
+/* Just as body2-block in Farm page*/
+.quest-container {
+    /* margin: 0px; */
+    padding: 5px 0px 0px;
+    width: 370px;
+    background: #1c0c1d;
+    /* border: 2px solid hsl(250, 50%, 60%); */
+    border-radius: 20px 20px 10px 10px;
+    /* overflow: hidden; */
+}
+
+.quest-container span {
+    margin: 4px;
+    padding: 20px 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.quest-container h3 {
+    margin: 4px 0px;
+    padding: 2px 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #af0b7b;
+    text-align: center;
+}
+
+.body2-block {
+    /* margin: 0px; */
+    padding: 5px 0px 0px;
+    width: 370px;
+    background: #1c0c1d;
+    /* border: 2px solid hsl(250, 50%, 60%); */
+    border-radius: 20px 20px 10px 10px;
+    /* overflow: hidden; */
+}
+
+.body2-block span {
+    margin: 4px;
+    padding: 20px 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.body2-block h3 {
+    margin: 4px 0px;
+    padding: 2px 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #af0b7b;
+    text-align: center;
+}
+
+.airdrop-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+.airdrop-area span {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: left;
+}
+
+.quests-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 4px;
+    padding: 2%;
+    min-width: 370px;
+    /* height: 550px; */
+    background: radial-gradient(#1c0c1d, #663267, #1c0c1d);
+    /* border: 2px solid hsl(250, 50%, 60%); */
+    border-radius: 10px 10px 0px 0px;
+}
+
+.quests-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(#39053a, #7f6082, #3b173e);
+    border-radius: 5px;
+}
+
+
+.highlight-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 330px;
+    height: 50px;
+    /* gap: 50px; */
+    border: 1px solid #af0b7b;
+    border-radius: 10px;
+    margin: 10px 5px;
+    padding: 1px 2px;
+    position: relative;
+}
+
+.highlight-box img {
+    width: 30px;
+    height: 30px;
+    margin: 2px 1px 2px 2px;
+    padding: 2px 0px 2px 2px;
+}
+
+.highlight-box p {
+    color: #aba0a0;
+    /* color: #4b2941; */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 2px 2 2px 1px;
+    padding: 2px 2px 2px 0px;
+    position: absolute;
+    left: 40px;
+}
+
+.highlight-box a {
+    text-decoration: none;
+}
+
+.highlight-box button {
+    color: #000;
+    background-color: rgba(93, 72, 197);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.7rem;
+    /* font-weight: bold; */
+    margin: 10px;
+    padding: 4px 2px;
+    border: none;
+    border-radius: 10px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.quests-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 330px;
+    height: 50px;
+    /* gap: 50px; */
+    border: 1px solid #af0b7b;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 1px 2px;
+    position: relative;
+}
+
+.quests-box p {
+    color: #aba0a0;
+    /* color: #4b2941; */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 2px 2 2px 1px;
+    padding: 2px 2px 2px 0px;
+    position: absolute;
+    left: 40px;
+}
+
+.quests-box img {
+    width: 30px;
+    height: 30px;
+    margin: 2px 1px 2px 2px;
+    padding: 2px 0px 2px 2px;
+
+}
+
+.quests-box a {
+    text-decoration: none;
+}
+
+.quests-box button {
+    color: #aba0a0;
+    background-color: #39053a;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.7rem;
+    /* font-weight: bold; */
+    margin: 10px;
+    padding: 4px 2px;
+    border: none;
+    border-radius: 10px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.quests-box button:hover {
+    background-color: #460247;
+    color: #edbe03;
+}
+
+.zin-task button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2px;
+    padding: 2px 10px 2px 2px;
+}
+
+.zin-task button img {
+    width: 22px;
+    height: 22px;
+    /* margin: 2px 4px 2px; */
+    padding: 1px;
+}
+
+/* CountDown Code Here:👇 */
+
+.head-content {
+    margin: 5px 0px;
+}
+
+.head-content span {
+    color: #020202;
+}
+
+.head-content p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #edbe03;
+    text-align: center;
+}
+
+.head-content h2 {
+    margin: 2px 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #7766cc;
+}
+
+/* Child to: CNTD-PANNEL (Bellow: 👇*/
+.perform-task {
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 93%;
+    margin: 10px auto;
+    padding: 5px;
+    background: linear-gradient(#39053a, #7f6082, #3b173e);
+    border-radius: 20px;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.perform-task-minibox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 20px auto 0px;
+    padding: 15px 10px;
+    background-color: rgba(93, 72, 197, 0.2);
+    border-radius: 50px 50px 20px 20px;
+    border-top: 20px solid#edbe03;
+    border-bottom: 5px solid#edbe03;
+    /* opacity: 5; */
+    top: 55%;
+    left: 50%;
+}
+
+.perform-task-minibox p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: #c3bd9f;
+    margin: 10px 2px;
+}
+
+.perform-task-minibox button {
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px 2px;
+    padding: 5px;
+}
+
+.perform-task-minibox img {
+    width: 110px;
+    height: 120px;
+}
+
+#mining-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 0px;
+    padding: 10px 35px;
+    gap: 5px;
+    /* background: radial-gradient(#999896, #59385c, #39053a); */
+    background-color: rgba(234, 0, 255, 0.016);
+    /* border: 1px solid #af0b7b; */
+    opacity: 80%;
+    backdrop-filter: blur(180px);
+    opacity: 8000px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0.9px #5d48c5;
+    width: 80%;
+    position: relative;
+    transition: opacity 3s;
+
+    /* Animated Border Here:👇 */
+
+}
+
+#zin,
+.zin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* content: "0"; */
+    font-family: 'New', Courier, monospace;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #e3bc1f;
+    padding: 10px;
+    width: 85px;
+    height: 50px;
+    background: radial-gradient(#9d91d9, #5d48c5, #39053a);
+    border-radius: 50%;
+    top: -45px;
+    left: -25px;
+    /* position: relative; */
+    position: absolute;
+    box-shadow: 0px 0px 10px 0.9px #570158;
+    margin: auto;
+    padding: 1em;
+
+    /* Animated Border Here:👇 */
+
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.zin::after,
+.zin::before {
+    /* --angle: 0deg; */
+    content: "";
+    width: 85px;
+    height: 50px;
+    position: absolute;
+    background-image: conic-gradient(from var(--angle), #0000ff, #ff0000, #ffffff, #0000ff);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    border-radius: 450%;
+    padding: 30px 45px;
+    animation: 3s spin linear infinite;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+
+.zin::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+#mining-box button {
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    background: linear-gradient(#999896, #e3bc1f, #39053a);
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#mining-box button:hover {
+    width: 152px;
+    height: 42px;
+    border-radius: 14px;
+    background: linear-gradient(#999896, #bb9c1f, #39053a);
+    border: 1px solid #af0b7b;
+    cursor: pointer;
+    color: #39053a;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#mining-box button:active {
+    font-size: 15px;
+    border-radius: 15px;
+    background: linear-gradient(#999896, #bb9c1f, #39053a);
+    border: none;
+}
+
+#mining-box p {
+    color: #999896;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#claim-points {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 4px 0px;
+    padding: 15px;
+    gap: 10px;
+    background: radial-gradient(#999896, #59385c, #39053a);
+    /* border: 1px solid #af0b7b; */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0.9px #570158;
+    width: 100%;
+    font-size: 12px;
+}
+
+#claim-points button {
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    background: linear-gradient(#999896, #e3bc1f, #39053a);
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#claim-points button:hover {
+    width: 155px;
+    height: 45px;
+    border-radius: 12px;
+    background: linear-gradient(#999896, #bb9c1f, #39053a);
+    border: 1px solid #af0b7b;
+    cursor: pointer;
+    color: #39053a;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#claim-points p {
+    color: #999896;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ring-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    padding: 5%;
+    border: 2px solid #460247;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
+
+.count-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+    padding: 20%;
+    width: 120px;
+    height: 120px;
+    background: hsl(299, 35%, 30%);
+    border: 8px solid hsl(250, 50%, 60%);
+    border-radius: 50%;
+    box-shadow: 0px 0px 25px 15.8px #39053a;
+    background: radial-gradient(#999896, #59385c, #39053a);
+
+}
+
+.count-down span {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #edbe03;
+
+}
+
+.cntd-pannel {
+    /* Parent to: PERFORM TASK (Above: 👆)*/
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 2%;
+    background: radial-gradient(#1c0c1d, #663267, #1c0c1d);
+    border-radius: 10px;
+    font-size: 0.8rem;
+    position: relative;
+}
+
+.countdown-group {
+    width: 100%;
+    padding: 5px;
+    background: linear-gradient(#39053a, #999896, #59385c);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+hr {
+    border: 1px solid#ff3757;
+    margin: 0px 5px;
+    padding: 0px;
+}
+
+.counting-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    width: 70px;
+    height: 100px;
+    border: 1px solid;
+    border-radius: 4px;
+    /* font-size: 30px; */
+    margin: 4px;
+    padding: 25px 0px 0px;
+}
+
+.counting-box hr {
+    width: 100%;
+    border: 1px solid #7766cc;
+    margin: 0px;
+    padding: 0px;
+}
+
+.counting-box p {
+    color: #4b2941;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+}
+
+.count-text {
+    color: #4b2941;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 2px;
+    padding-top: 2px;
+}
+
+
+.footer-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(299, 35%, 30%);
+    border-radius: 0px 0px 10px 10px;
+    border-bottom: 5px solid #7766cc;
+    box-shadow: 0px 2px 10px 0.5px #edbe03;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.panel-box {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(299, 38%, 21%);
+    flex-direction: column;
+    /* gap: 5px; */
+    padding: 5px;
+    border-radius: 5px;
+    color: #7766cc;
+}
+
+.panel-box img {
+    width: 40px;
+    height: 40px;
+}
+
+.panel-box span {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+}
+
+.panel-box span:hover {
+    font-size: 12px;
+}
