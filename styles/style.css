@@ -455,7 +455,7 @@ body {
 /* Child to: CNTD-PANNEL (Bellow: 👇*/
 .perform-task {
 
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
